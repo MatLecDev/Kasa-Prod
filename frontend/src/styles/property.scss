@@ -1,0 +1,313 @@
+.propertyPage{
+  position: relative;
+  padding-top: 150px;
+  display: flex;
+  gap: 50px;
+  
+  img{
+    cursor: pointer;
+  }
+
+  .goBackBtn{
+    position: absolute;
+    top: 80px;
+
+    button{
+      padding: 10px 20px;
+      background-color: var(--light-gray);
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  .property{
+    width: 80%;
+  }
+
+  h2{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  .propertyPictures{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+
+    img{
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .cover{
+      width: 50%;
+      height: auto;
+    }
+
+    .pictures{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 15px;
+
+      img{
+        width: 100%;
+        height: 200px;
+      }
+    }
+  }
+
+  .propertyDetails{
+    width: 100%;
+    padding: 20px 30px;
+    background-color: white;
+    height: fit-content;
+    border-radius: 10px;
+    border: 1px solid var(--light-gray);
+
+    .propertyMainInfos{
+      h1{
+        font-size: 32px;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+
+      span{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      p{
+        margin-bottom: 30px;
+      }
+    }
+
+    ul{
+      width: fit-content;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    li{
+      list-style: none;
+      padding: 10px 20px;
+      background-color: var(--light-gray);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .propertyEquipements{
+      margin-bottom: 30px;
+    }
+  }
+
+  .hostCard{
+    width:25%;
+    padding: 20px 30px;
+    height: fit-content;
+    border-radius: 10px;
+    border: 1px solid var(--light-gray);
+    background-color: white;
+
+    .hostCardHeader{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      text-align: center;
+
+      img{
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      h3{
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+      span{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+        background-color: var(--light-gray);
+        padding: 10px;
+        border-radius: 10px;
+      }
+    }
+
+    button{
+      margin-top: 20px;
+      width: 100%;
+      background-color: var(--main-red);
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+    }
+  }
+}
+
+@media (max-width: 1700px){
+  .propertyPage{
+    .hostCard{
+      width: 30%;
+    }
+  }
+}
+
+@media (max-width: 1400px){
+  .propertyPage{
+    .hostCard{
+      width: 35%;
+    }
+  }
+}
+
+@media (max-width: 1200px){
+  .propertyPage{
+    .hostCard{
+      width: 40%;
+    }
+  }
+}
+
+@media (max-width: 1000px){
+  .propertyPage{
+    flex-direction: column;
+    width: 100%;
+    padding-top: 70px;
+
+    .goBackBtn{
+      top: 20px;
+    }
+
+    .property{
+      width: 100%;
+
+      .propertyPictures{
+        flex-direction: column;
+
+        .cover{
+          width: 100%;
+        }
+
+        .pictures{
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+
+    .hostCard{
+      width: fit-content;
+      article{
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px){
+  .propertyPage{
+    gap: 20px;
+
+    .goBackBtn{
+      button{
+        font-size: 14px;
+      }
+    }
+
+    .propertyPictures{
+      gap: 10px;
+
+      .pictures{
+        gap: 10px;
+
+        img{
+          height: 150px;
+        }
+      }
+    }
+
+    .propertyDetails{
+      padding: 15px;
+      .propertyMainInfos{
+        h1{
+          font-size: 24px;
+        }
+
+        span, p{
+          font-size: 14px;
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    .propertyEquipements, .propertyCategories{
+      h2{
+        font-size: 16px;
+      }
+
+      li{
+        padding: 10px;
+        font-size: 12px;
+      }
+    }
+
+    .hostCard{
+      padding: 15px;
+
+      h2{
+        font-size: 16px;
+      }
+
+      .hostCardHeader{
+        h3{
+          font-size: 14px;
+        }
+
+        span{
+          font-size: 14px;
+
+          img{
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+
+      button{
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px){
+  .propertyPage{
+    .propertyPictures{
+      gap: 5px;
+
+      .pictures{
+        gap: 5px;
+        img{
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+

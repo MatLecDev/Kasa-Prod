@@ -1,0 +1,222 @@
+.manageProperty{
+  position: relative;
+
+  .error{
+    color: var(--main-red);
+    font-weight: 500;
+  }
+
+  .goBackBtn{
+    position: absolute;
+    top: 60px;
+    background-color: var(--light-gray);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+}
+
+.managePropertyHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 120px 0 30px;
+
+  button{
+    background-color: var(--main-red);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 16px;
+  }
+
+  h1{
+    font-size: 32px;
+    font-weight: 500;
+  }
+}
+
+.userInputs{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  .category{
+    background-color: white;
+    padding: 50px 75px;
+    border-radius: 15px;
+    border: 1px solid var(--light-gray);
+
+    input:checked{
+      accent-color: var(--main-red);
+    }
+
+    h2{
+      margin-bottom: 15px;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    label{
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .input{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 20px;
+
+      .file {
+        display: flex;
+        align-items: center;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        width: calc(100% - 35px);
+        position: relative;
+        height: 40px;
+
+        #tag{
+          border: none;
+          width: 100%;
+          height: 99%;
+        }
+      }
+
+      .file input[type="file"] {
+        flex: 1;
+        border: none;
+        padding: 6px 10px;
+        font-size: 14px;
+        outline: none;
+        cursor: pointer;
+      }
+
+      .file input[type="file"]::file-selector-button {
+        display: none;
+      }
+
+      .file-button {
+        position: absolute;
+        right: -50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: var(--main-red);
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    }
+
+    .categoriesFlex{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 20px;
+
+      .singleCategory{
+        width: fit-content;
+        background-color: var(--light-gray);
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+
+      .active{
+        background-color: var(--main-red);
+        color: white;
+      }
+    }
+
+    input, textarea{
+      padding: 10px;
+      border: 1px solid var(--light-gray);
+      border-radius: 5px;
+      font-size: 18px
+    }
+
+    .equipmentsGrid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      span{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      label{
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .userInputs{
+    .category{
+      padding: 35px 50px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .userInputs{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .manageProperty{
+    .goBackBtn{
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+    .managePropertyHeader{
+      h1{
+        font-size: 24px;
+      }
+
+      button{
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  .userInputs{
+    .category{
+      padding: 20px;
+      h2{
+        font-size: 20px;
+      }
+
+      label{
+        font-size: 16px;
+      }
+
+      input, textarea{
+        font-size: 14px;
+      }
+
+      .input{
+        .file{
+          width: calc(100% - 60px);
+        }
+      }
+    }
+  }
+}

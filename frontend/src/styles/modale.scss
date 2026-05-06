@@ -1,0 +1,148 @@
+.modaleBackground{
+  width: 100vw;
+  height: 100vh;
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modale{
+    height: 50%;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative!important;
+
+    .closeBtn {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      background: none;
+      border: 2px solid var(--main-red);
+      border-radius: 50%;
+      display: flex;
+
+      img{
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .indexBtn{
+      background: none!important;
+      border: 2px solid var(--main-red);
+      border-radius: 50%;
+      display: flex;
+
+      img{
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .imageWrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      .slideWrapper {
+        width: 100%;
+        height: 100%;
+
+        img{
+          width: 100%;
+          height: 100%;
+          border-radius: 30px;
+          object-fit: cover;
+        }
+
+        &.slide-in {
+          animation: slideIn 0.3s ease forwards;
+        }
+
+        &.slide-out-right {
+          animation: slideOutRight 0.3s ease forwards;
+        }
+
+        &.slide-out-left {
+          animation: slideOutLeft 0.3s ease forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(0); opacity: 0.4; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-60px); opacity: 0; }
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(60px); opacity: 0; }
+}
+
+@media (max-width: 1000px) {
+  .modaleBackground{
+    .modale{
+      gap: 10px;
+      .closeBtn{
+        top: 5%;
+        img{
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .indexBtn{
+        img{
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .imageWrapper{
+        height: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .modaleBackground{
+    .modale{
+      gap: 10px;
+
+      .closeBtn{
+        top: 22%;
+        img{
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .indexBtn{
+        img{
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .imageWrapper{
+        height: 50%;
+      }
+    }
+  }
+}

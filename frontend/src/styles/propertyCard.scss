@@ -1,0 +1,70 @@
+.property-card-link {
+  text-wrap: wrap;
+}
+
+.property-card{
+  border-radius: 10px ;
+  background: white;
+  height: 100%;
+  position: relative;
+
+  .property-card-image{
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    object-fit: cover;
+    height: 500px;
+  }
+}
+
+.property-details{
+  padding: 15px 30px 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 500px);
+
+  h2{
+    font-size: 24px;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 5px;
+  }
+
+  h3{
+    font-size: 18px;
+    color: var(--dark-gray);
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .property-card{
+    .property-card-image{
+      height: 400px;
+    }
+  }
+
+  .property-details{
+    height: calc(100% - 400px);
+  }
+}
+
+@media (max-width: 500px) {
+  .property-card{
+    .property-card-image{
+      height: 300px;
+    }
+  }
+
+  .property-details{
+    height: calc(100% - 300px);
+    h2{
+      font-size: 18px;
+    }
+
+    h3, p{
+      font-size: 14px;
+    }
+  }
+}
